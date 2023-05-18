@@ -38,9 +38,11 @@ streamlit.header("FRUIT LOAD LIST CONTAINS:")
 def get_fruit_load_list():
   with my_cnx.cursor() as my_cur:
     my_cur.execute("SELECT * FROM FRUIT_LOAD_LIST")
-    return my_cur.fetchall()  
+    return my_cur.fetchall()
+  
+streamlit.header('View our fruit list - Add Your Favourites')
 #Add a button to add fruit in the list
-if streamlit.button('Get fruit list'):
+if streamlit.button('Get Fruit List'):
   my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
   my_data_rows = get_fruit_load_list()
   my_cnx.close()
