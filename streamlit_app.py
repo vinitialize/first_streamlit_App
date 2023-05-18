@@ -1,6 +1,10 @@
 #Created the main python file
 import streamlit
 import pandas
+import requests
+fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+streamlit.text(fruityvice_response)
+
 streamlit.title('This is my first streamlit app')
 streamlit.header('Breakfast Menu')
 streamlit.text('🥣Omega 3 & Blueberry Oatmeal')
